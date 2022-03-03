@@ -1,0 +1,135 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Sancreek&family=Syne+Mono&display=swap');
+:root{
+    --fira-code:  'Fira Code', monospace;
+    --sancreek : 'Sancreek', cursive;
+    --syne-mono:'Syne Mono', monospace;
+
+}
+header{
+    
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+header h2{
+    font-size: 30px;
+    font-family: var(--sancreek);
+    color: darkred;
+}
+.songs-head{
+    font-family: var(--syne-mono);
+    font-size: 1.5rem;
+}
+.songs{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+}
+.songs .container  {
+    transition: all ease-in 250ms;
+   margin: 5px;
+    background-color:whitesmoke;
+    
+}
+.songs a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+.songs p {
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+}
+.songs a img{
+    width: 100%;
+    height: 70%;
+}
+.search-container{
+    display: flex;
+    height: 50%;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    padding: 7px;
+    border-radius: 5px;
+}
+.search-container input[type='text']{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-family: var(--fira-code);
+}
+.search-container input[type='text']::placeholder{
+    font-size: 12px;
+    font-family: var(--fira-code);
+}
+.search-container button{
+    border: none;
+    background-color: white;
+    color: black;
+    margin-left:10px;
+    cursor:pointer;
+    
+}
+.search-container i{
+    font-size: 20px;
+}
+.searched-songs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100vw;
+}
+.searched-songs .searched-container {
+    margin: 2px;
+    box-shadow: 1px 1px 10px 1px rgba(78, 5, 27, 0.2);
+}
+.searched-songs .searched-container  img{
+    width: 100%;
+}
+.searched-container a{
+    text-decoration: none;
+    color: brown;
+    font-family: var(--fira-code);
+    font-size: smaller;
+}
+@keyframes loading{
+    from{
+        transform: rotate(0deg);
+        
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.loader{
+    top: 50%;
+    border-width: 5px;
+    border-color: rgba(0, 0, 0,0.5);
+    border-top-color: aqua;
+    border-style: solid;
+    right: 40vw;
+    position:fixed;
+    width: 70px;
+    height: 70px;
+    animation: loading ease-in-out .5s infinite ;
+    animation-delay: 0ms;
+    border-radius: 50%;
+}
+@media screen and (min-width:1024px) {
+    .songs{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .loader{
+        right: 50vw;
+    }
+    .searched-songs{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+}
